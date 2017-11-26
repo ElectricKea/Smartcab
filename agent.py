@@ -95,18 +95,10 @@ class LearningAgent(Agent):
         max_v = self.Q[state].values()
         keys = []
         for key, value in self.Q[state].items():
-            if max(max_v) == 0.0:       # If the max value of 0, make a list of all 0 values
-                if value == 0.0: 
+            if value == max(max_v): 
                     keys.append(key)        
-            elif value == max(max_v):   
-                keys = key              # If the max value is greater than 0 use that action
-    
-        if type(keys)==list:
-            maxQ = random.choice(keys)  # Choose a random action from the list
-            #print ("random", keys, maxQ)
-        else:
-            maxQ = keys
-            #print("set", maxQ)
+            
+        maxQ = random.choice(keys)  # Choose a random action from the list
         return maxQ 
 
 
