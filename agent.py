@@ -96,9 +96,9 @@ class LearningAgent(Agent):
         keys = []
         for key, value in self.Q[state].items():
             if value == max(max_v): 
-                    keys.append(key)        
+                    keys.append(key)        # Make a list of all actions that equal the max value
             
-        maxQ = random.choice(keys)  # Choose a random action from the list
+        maxQ = random.choice(keys)  # Choose a random action from the list of maxed actions
         return maxQ 
 
 
